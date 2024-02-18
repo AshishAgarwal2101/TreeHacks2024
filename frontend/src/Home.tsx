@@ -117,7 +117,7 @@ export default function Home() {
     return (   
     <div className="home-style">
       <div className="home-header">
-        <h1 className="header-text">Welcome to <b>WeHeal</b>. The companion for superheroes.</h1>
+        <h1 className="header-text">Welcome to <b>WeHeal</b>, your AI powered companion for counselors.</h1>
         <div className="header-upload">
             <div>
                 <form onSubmit={handleFileChange}>
