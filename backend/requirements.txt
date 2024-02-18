@@ -1,0 +1,9 @@
+langchain
+lancedb
+llama-parse
+llama-index
+pip install predictionguard
+pip install sentence-transformers
+pip install momento
+pip install flask
+pip install flask-cors
