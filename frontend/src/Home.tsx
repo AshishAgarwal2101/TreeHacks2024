@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TextInput, Badge } from "@canva/app-ui-kit";
+import { MultilineInput, TextInput, Badge } from "@canva/app-ui-kit";
 import ApiCalls from "./ApiCalls";
 
 export default function Home() {
@@ -75,7 +75,7 @@ export default function Home() {
         return <>
             {chatHistory.map((chat: any) => {
                 if(chat.party === "patient") {
-                    return getPatientReplyBox("Alex Michael", chat.reply);
+                    return getPatientReplyBox("Sanjay", chat.reply);
                 }
                 else {
                     return getDoctorReplyBox("Dr. Hendrikson", chat.reply);
@@ -95,6 +95,7 @@ export default function Home() {
             setChatHistory(chatHistoryNew);
             let lastUserReply = chatHistoryNew.findLast((chat: any) => chat.party === "patient");
             ApiCalls.saveConversation(userId, (lastUserReply ? lastUserReply.reply : ""), doctorChatTypeText);
+            setDoctorChatTypeText("");
 
             if(dummyUserReplies.length > 0) {
                 let newUserReply = dummyUserReplies[0];
@@ -105,7 +106,6 @@ export default function Home() {
                 let suggestedReply = await ApiCalls.ongoingSession(userId, newUserReply);
                 setSuggestedReply(suggestedReply);
             }
-            setDoctorChatTypeText("");
         }
     };
 
@@ -165,7 +165,8 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="chat-input-doctor">
-                    <TextInput
+                    <MultilineInput
+                        autoGrow
                         onChange={handleDoctorChatTypeText}
                         onKeyDown={handleChatKeyDown}
                         placeholder="Type your reply and press Enter"
