@@ -1,4 +1,4 @@
-const BASE_URL = "https://21ea-146-152-226-61.ngrok-free.app";
+const BASE_URL = "https://d168-146-152-226-61.ngrok-free.app";
 
 export default {
     startSession: async (userId: any, formData: any) => {
