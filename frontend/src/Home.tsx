@@ -6,10 +6,10 @@ export default function Home() {
     const [dummyUserReplies, setDummyUserReplies] = useState([
         "Hello. I am feeling depressed these days",
         "I'm worried about starting therapy. What if it doesn't help? What if I'm just beyond help?",
-        "I like red colors and blue colors",
-        "There are moments when I feel guilty for feeling this way. I have so much to be grateful for, yet I still can't shake off this sadness",
-        "Thank you for reminding me that there's hope. I'll try to hold onto that, even on the darkest days.",
-        "I want to believe that things can get better, but right now, it's hard to see a light at the end of the tunnel.",
+        // "I like red colors and blue colors",
+        // "There are moments when I feel guilty for feeling this way. I have so much to be grateful for, yet I still can't shake off this sadness",
+        // "Thank you for reminding me that there's hope. I'll try to hold onto that, even on the darkest days.",
+        // "I want to believe that things can get better, but right now, it's hard to see a light at the end of the tunnel."
     ]);
     const [patientBackground, setPatientBackground] = useState('Summary will appear here after Document Upload.');
     const [suggestedReply, setSuggestedReply] = useState("");
