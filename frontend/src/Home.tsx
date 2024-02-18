@@ -6,10 +6,10 @@ export default function Home() {
     const [dummyUserReplies, setDummyUserReplies] = useState([
         "Hello. I am feeling depressed these days",
         "I'm worried about starting therapy. What if it doesn't help? What if I'm just beyond help?",
-        "Thank you for your understanding and support. It means a lot to me to know that I'm not alone in this struggle.",
-        "I want to believe that things can get better, but right now, it's hard to see a light at the end of the tunnel.",
+        "I like red colors and blue colors",
         "There are moments when I feel guilty for feeling this way. I have so much to be grateful for, yet I still can't shake off this sadness",
-        "Thank you for reminding me that there's hope. I'll try to hold onto that, even on the darkest days."
+        "Thank you for reminding me that there's hope. I'll try to hold onto that, even on the darkest days.",
+        "I want to believe that things can get better, but right now, it's hard to see a light at the end of the tunnel.",
     ]);
     const [patientBackground, setPatientBackground] = useState('Summary will appear here after Document Upload.');
     const [suggestedReply, setSuggestedReply] = useState("");
@@ -98,13 +98,15 @@ export default function Home() {
             setDoctorChatTypeText("");
 
             if(dummyUserReplies.length > 0) {
-                let newUserReply = dummyUserReplies[0];
-                chatHistoryNew.push({ party: "patient", reply: newUserReply });
-                setChatHistory(chatHistoryNew.slice(0));
-                setDummyUserReplies(dummyUserReplies.slice(1));
-                setSuggestedReply("...Loading...");
-                let suggestedReply = await ApiCalls.ongoingSession(userId, newUserReply);
-                setSuggestedReply(suggestedReply);
+                setTimeout(async () => {
+                    let newUserReply = dummyUserReplies[0];
+                    chatHistoryNew.push({ party: "patient", reply: newUserReply });
+                    setChatHistory(chatHistoryNew.slice(0));
+                    setDummyUserReplies(dummyUserReplies.slice(1));
+                    setSuggestedReply("...Loading...");
+                    let suggestedReply = await ApiCalls.ongoingSession(userId, newUserReply);
+                    setSuggestedReply(suggestedReply);
+                }, 3000);
             }
         }
     };
