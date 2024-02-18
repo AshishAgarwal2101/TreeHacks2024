@@ -107,7 +107,6 @@ body{
 
 
 .icondiv{
-	
 	border-radius: 50%;
 	width: 15px;
 	height: 15px;
@@ -125,7 +124,6 @@ body{
 	flex-direction: column;
 	justify-content: space-between;
 	transition: opacity 0.5s ease;
-	opacity: 0;
 }
 
 .home-header {
@@ -206,6 +204,13 @@ form {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: left;
+}
+
+.empty-chat {
+	text-align: center;
+	margin-top: 60%;
+	color: #aaa;
+	font-size: 20px;
 }
 
 .home-content-right p {
