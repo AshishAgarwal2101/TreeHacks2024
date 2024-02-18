@@ -105,6 +105,7 @@ export default function Home() {
                 let suggestedReply = await ApiCalls.ongoingSession(userId, newUserReply);
                 setSuggestedReply(suggestedReply);
             }
+            setDoctorChatTypeText("");
         }
     };
 
